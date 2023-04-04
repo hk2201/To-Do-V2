@@ -4,6 +4,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const date = require(__dirname + "/date.js");
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 mongoose.connect("mongodb+srv://hk22:harshaD1506@cluster0.otgg2e5.mongodb.net/todoDB", { useNewUrlParser: true });
@@ -105,6 +106,6 @@ app.post("/deleteItem", async function (req, res) {
   res.redirect("/");
 })
 
-app.listen(3000, function () {
+app.listen(PORT, function () {
   console.log("Server started on port 3000");
 });
